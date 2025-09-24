@@ -1,41 +1,105 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="style.css">
-   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" />
-    </head>
-<body>
-  <header>
-    <div>
-        <ul class="header_nav" >
-            <li><img src="./image/logo.svg" alt="Error 404"></li>
-            <li id="toggle_menu_open" class="toggle_menu_btn"><button><span class="material-symbols-outlined" style="font-size: 45px;">menu</span></button></li>
-            <li id="toggle_menu_close" class="toggle_menu_btn toggle"><button><span class="material-symbols-outlined" style="font-size: 45px;">close</span></button></li>
-        </ul>
-    </div>
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+		<link rel="stylesheet" href="style.css" />
+		<link
+			rel="stylesheet"
+			href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined"
+		/>
+	</head>
+	<body>
+		<header>
+			<div>
+				<ul class="header_nav">
+					<li><img src="./image/logo.svg" alt="Logo" /></li>
+					<li id="toggle_menu_open" class="toggle_menu_btn">
+						<button>
+							<span class="material-symbols-outlined" style="font-size: 45px"
+								>menu</span
+							>
+						</button>
+					</li>
+					<li id="toggle_menu_close" class="toggle_menu_btn toggle">
+						<button>
+							<span class="material-symbols-outlined" style="font-size: 45px"
+								>close</span
+							>
+						</button>
+					</li>
+				</ul>
+			</div>
 
-    <nav id="nav_container">
-        <ul class="nav_list primary_text">
-            <li><a href="#">Главная</a></li>
-            <li><a href="#">Каталог</a></li>
-            <li><a href="#">О компанииная</a></li>
-            <li><a href="#">Оплата и доставка</a></li>
-            <li><a href="#">Контакты</a></li>
-        </ul>
-    </nav>
-    
-  </header>
+			<nav id="nav_container">
+				<ul class="nav_list primary_text">
+					<li><a href="#">Главная</a></li>
+					<li><a href="#">Каталог</a></li>
+					<li><a href="#">О компании</a></li>
+					<li><a href="#">Оплата и доставка</a></li>
+					<li><a href="#">Контакты</a></li>
+				</ul>
+			</nav>
+		</header>
 
+		<main id="main_container">
+			<div class="rec_item_container">
+				<h1>Рекомендуемое оборудование</h1>
+			</div>
+			<div id="cards_container"></div>
 
+			<div class="primary_btn viewAll">
+				<button>Перейти в каталог</button>
+			</div>
+		</main>
 
-<script src="script.js">
+		<section>
+			<div class="aboutCompany">
+				<h2>О компании</h2>
+			</div>
+			<div class="img_container">
+				<div class="firstImageContent">
+					<img src="/image//firstPhoto.svg" alt="Error" />
+				</div>
+				<div class="secondImageContent">
+					<img src="/image/leftPhoto.svg" alt="Error" />
+					<img src="/image/rightImage.svg" alt="Error" />
+				</div>
+			</div>
 
+			<div class="description">
+				<p>
+					Компания «SPARTSPRO» специализируется на поставках лифтового
+					оборудования, комплектующих и запчастей для лифтов и эскалаторов
+					ведущих мировых и российских производителей.
+				</p>
+			</div>
+			<ul class="achive">
+				<li>
+					<img src="/image/orangeVector.svg" alt="Error" />Гарантия качества –
+					работаем только с проверенными производителями.
+				</li>
+				<li>
+					<img src="/image/orangeVector.svg" alt="Error" />Собственный склад –
+					более 30 000 наименований в наличии для оперативных отгрузок.
+				</li>
+				<li>
+					<img src="/image/orangeVector.svg" alt="Error" />Соблюдение сроков –
+					приоритет компании: быстрая обработка заказов и доставка без задержек.
+				</li>
+			</ul>
 
-</script>
-
-  
-</body>
+			<div>
+				<p>
+					Мы обеспечиваем бесперебойные поставки для ваших проектов. Оставьте
+					заявку – и получите коммерческое предложение в кратчайшие сроки!
+				</p>
+			</div>
+			<div class="primary_btn">
+				<button>Подробнее</button>
+			</div>
+		</section>
+		<script src="script.js"></script>
+	</body>
 </html>
