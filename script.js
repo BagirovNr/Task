@@ -1,66 +1,70 @@
-const openToggle = document.querySelector('#toggle_menu_open')
-const closeToggle = document.querySelector('#toggle_menu_close')
-const navContainer = document.querySelector('#nav_container')
-const cardsContainer = document.getElementById('cards_container')
+const cardsContainer = document.querySelector('.cards_container')
+const toggleBtn = document.querySelector('.toggle-btn')
+const closeBtn = document.querySelector('.close-btn')
+const mobileLinks = document.querySelector('.mobile-nav-links')
 
-openToggle.addEventListener('click', () => {
-	openToggle.style.display = 'none'
-	closeToggle.classList.remove('toggle')
-	navContainer.style.display = 'block'
+function openMenu() {
+	mobileLinks.classList.add('open')
 	document.body.style.overflow = 'hidden'
-})
+	toggleBtn.classList.add('toggle')
+	closeBtn.classList.remove('toggle')
+}
 
-closeToggle.addEventListener('click', () => {
-	closeToggle.classList.add('toggle')
-	openToggle.style.display = 'block'
-	navContainer.style.display = 'none'
-	document.body.style.overflow = ''
-})
+function closeMenu() {
+	mobileLinks.classList.remove('open')
+	document.body.style.overflow = 'auto'
+	toggleBtn.classList.remove('toggle')
+	closeBtn.classList.add('toggle')
+}
 
-// Данные
+toggleBtn.addEventListener('click', openMenu)
+closeBtn.addEventListener('click', closeMenu)
+closeBtn?.addEventListener('click', closeMenu)
+
 const products = [
 	{
 		img: '/image/recomendItems/iron.svg',
 		title: 'Стальной канат для лифта GRS 9X21F(9Х17)-IWRC 1570',
 		count: 'В наличии 50 м.',
 		detailBtn: 'Подробнее',
+		greenCheck: '/image/greenVector.svg',
 	},
 	{
 		img: '/image/recomendItems/beltElevator.svg',
 		title: 'Плоский тяговый ремень для лифта GRS AAA717X1 (12 кордов)',
 		count: 'В наличии 50 м.',
 		detailBtn: 'Подробнее',
+		greenCheck: '/image/greenVector.svg',
 	},
 	{
 		img: '/image/recomendItems/steelRope8x19.svg',
 		title: 'Стальной канат для лифта GRS 8X19S-NFC 1570',
 		count: 'В наличии 50 м.',
 		detailBtn: 'Подробнее',
+		greenCheck: '/image/greenVector.svg',
 	},
 	{
 		img: '/image/recomendItems/steelRope9x21.svg',
 		title: 'Стальной канат для лифта GRS 9X21F(9Х17)-IWRC 1570',
 		count: 'В наличии 50 м.',
 		detailBtn: 'Подробнее',
+		greenCheck: '/image/greenVector.svg',
 	},
 ]
 
-// Функция создания карточки
-function createCard({ img, title, count, detailBtn }) {
+function createCard({ img, title, count, detailBtn, greenCheck }) {
 	return `
-    <div class="card_container">
-      <img src="${img}" alt="${title}">
-      <div class="card_items">
-        <h5>${title}</h5>
-        <div class="count_container">
-      <img class="greenVector" src="./image/greenVector.svg" alt="Error">
-        <p>${count}</p>
-        </div>
-        <div class="primary_btn all_btn">
-          <button onclick="alert('Вы выбрали: ${title}')">${detailBtn}</button>
-        </div>
-      </div>
-    </div>
+      <div class="main_items">
+				<div class="main_img"><img src="${img}" alt="Error"></div>
+					<div class="main_item_info">
+						<div><h3>${title}</h3></div>
+						<div class="main_count">
+							<img src="${greenCheck}" alt="Error">
+							<p>${count}</p>
+						</div>
+						<div onClick="alert('${title}')" class="primary_btn"><button>${detailBtn}</button></div>
+				</div>
+			</div>
   `
 }
 cardsContainer.innerHTML = products.map(createCard).join('')
